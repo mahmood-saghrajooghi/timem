@@ -1,4 +1,6 @@
-export class DateDiff {
+import invariant from "tiny-invariant";
+
+export class DateDiffClass {
   d1: Date;
   t1: number;
   d2: Date;
@@ -42,7 +44,7 @@ export class DateDiff {
 }
 
 export function getDateDiffString(d1: Date, d2: Date) {
-  const diff = new DateDiff(d1, d2);
+  const diff = new DateDiffClass(d1, d2);
   const hours = diff.inHours();
   const days = diff.inDays();
   const weeks = diff.inWeeks();
