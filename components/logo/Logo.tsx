@@ -24,11 +24,18 @@ const LogoVariants: Record<LogoVariant, any> = {
 interface LogoProps extends React.HTMLAttributes<HTMLOrSVGElement> {
   width?: number;
   variant?: LogoVariant;
+  theme?: ThemeColors;
+  css?: Interpolation<Theme>;
 }
 
-export const Logo: React.FC<LogoProps> = ({ width = 32, variant = 32 }) => {
+export const Logo: React.FC<LogoProps> = ({
+  width = 32,
+  variant = 32,
+  theme = "primary",
+  css,
+}) => {
   const Logo = LogoVariants[variant];
-  return <Logo width={width} />;
+  return <Logo width={width} css={[css, {color: themeColors[`timem-${theme}`][900]}]} />;
 };
 
 export const AnimatedLogo: React.FC<
