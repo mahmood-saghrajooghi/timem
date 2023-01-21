@@ -1,5 +1,5 @@
 import type { MantineColor } from "@mantine/core";
-import { useCallback, useRef, useState } from "react";
+import { useRef } from "react";
 import classNames from "classnames";
 import { Popover, Tooltip } from "@mantine/core";
 
@@ -50,7 +50,6 @@ export function TaskLabel({
   const inputRef = useRef<HTMLInputElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
-
   return (
     <Popover
       width={200}
@@ -64,7 +63,7 @@ export function TaskLabel({
       transition="pop-top-left"
     >
       <Popover.Target>
-        <button ref={buttonRef} onClick={() => open()}>
+        <button ref={buttonRef}>
           <Label
             size="xxs"
             color={selectedColor}
