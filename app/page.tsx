@@ -6,7 +6,7 @@ import { css } from "@emotion/react";
 import { Button } from "components/Button";
 import { Input } from "components/Input";
 import { SpacedChildren } from "components/styled/SpacedChildren";
-import { Task } from "components/Task";
+import { Task } from "components/Task/Task";
 import { Topic } from "components/Topic";
 import { useAppLoadingContext } from "context/loadingContext";
 import { useTopicContext } from "context/topic/context";
@@ -57,7 +57,7 @@ export default function Home() {
           childSpace=".5rem"
           className="bg-white flex"
         >
-          <Menu size="md" closeOnItemClick={false} position="bottom-start">
+          <Menu size="md" closeOnItemClick={false} position="bottom-start" transition="pop-top-left">
             <Menu.Target>
               <Button css={iconButtonCss} color="light-gray">
                 <Filter width={16} />

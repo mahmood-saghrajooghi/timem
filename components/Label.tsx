@@ -4,15 +4,16 @@ import {
   themeTextColorClassNames,
   ThemeComponentColor,
   ThemeVariant,
-} from "../utils/theme-utils";
+} from "utils/theme-utils";
 import classNames from "classnames";
 
-type LabelSize = "xs" | "sm" | "md";
+type LabelSize = "xxs" | "xs" | "sm" | "md";
 
 const sizeClassNames: Record<LabelSize, string> = {
   md: "px-4 py-2 text-sm font-medium ",
   sm: "px-2 py-1 text-xs font-medium ",
   xs: "px-2 py-1 text-xxs font-bold leading-3",
+  xxs: "px-2 py-0.5 text-xxs font-bold leading-3"
 };
 
 interface LabelProps extends React.HTMLAttributes<HTMLDivElement> {
@@ -38,7 +39,7 @@ export const Label = React.forwardRef<HTMLDivElement, LabelProps>(
         bg: themeBgColorClassNames[color][variant]["base"],
         text: themeTextColorClassNames[color][variant],
       }),
-      [color, color]
+      [color, variant]
     );
 
     const classes = classNames(

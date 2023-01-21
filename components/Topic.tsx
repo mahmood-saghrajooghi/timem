@@ -101,7 +101,7 @@ export function Topic({
               {pendingTasksCount} Pending
             </Label>
             <Label color="green" variant="lighter" size="xs">
-              {completeTasksCount}/{totalTasksCount} Complete
+              {completeTasksCount}/{totalTasksCount} Completed
             </Label>
 
             {isEditing && (

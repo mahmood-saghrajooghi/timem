@@ -1,10 +1,10 @@
-import React, { useCallback, useMemo, useState } from "react";
-import { Task } from "./Task";
-import { SpacedChildren } from "./styled/SpacedChildren";
-import { Timer } from "./Timer";
-import { useTopicContext } from "../context/topic/context";
-import { TaskType } from "../types/TaskTypes";
-import ChevronRight from "../icons/chevron-right";
+import React, { useCallback, useState } from "react";
+import { Task } from "components/Task/Task";
+import { SpacedChildren } from "components/styled/SpacedChildren";
+import { Timer } from "components/Timer";
+import ChevronRight from "icons/chevron-right";
+import { TaskType } from "types/TaskTypes";
+import { useTopicContext } from "context/topic/context";
 import { findTaskInTopics } from "context/topic/utils";
 
 export const CurrentSession: React.FC<{}> = () => {

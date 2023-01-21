@@ -1,3 +1,4 @@
+import { css } from "@emotion/react";
 import React, { useMemo } from "react";
 import {
   themeBgColorClassNames,
@@ -7,6 +8,25 @@ import {
 } from "../utils/theme-utils";
 
 type ButtonSize = "xs" | "sm" | "md";
+
+const sharedIconButtonCssOptions = {
+  padding: 0,
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+} as const;
+
+export const iconButtonCss = css({
+  ...sharedIconButtonCssOptions,
+  width: 20,
+  height: 20,
+});
+
+export const iconButtonCssSm = css({
+  ...sharedIconButtonCssOptions,
+  width: 16,
+  height: 16,
+});
 
 const sizeClassNames: Record<ButtonSize, string> = {
   md: "px-4 py-2 text-sm",
@@ -21,15 +41,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({
-    color = "gray",
-    variant = "dark",
-    size = "md",
-    children,
-    className,
-    type="button",
-    ...props
-  },ref) => {
+  (
+    {
+      color = "gray",
+      variant = "dark",
+      size = "md",
+      children,
+      className,
+      type = "button",
+      ...props
+    },
+    ref
+  ) => {
     const colors: { bg: string; text: string } = useMemo(
       () => ({
         bg:

@@ -1,11 +1,11 @@
 import { css } from "@emotion/react";
 import React, { useEffect, useRef, useState } from "react";
-import { useAppLoadingContext } from "../context/loadingContext";
-import { ThemeColors } from "../types/ThemeTypes";
-import { Label } from "./Label";
-import { AnimatedLogo } from "./logo/Logo";
-import { SpacedChildren } from "./styled/SpacedChildren";
-import { useTypical } from "./Typical";
+import { Label } from "components/Label";
+import { AnimatedLogo } from "components/logo/Logo";
+import { SpacedChildren } from "components/styled/SpacedChildren";
+import { useTypical } from "components/Typical";
+import { useAppLoadingContext } from "context/loadingContext";
+import { ThemeColors } from "types/ThemeTypes";
 
 export const ContentFooter: React.FC = () => {
   const [appIsLoading] = useAppLoadingContext();

@@ -45,6 +45,7 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(
       }),
       [color, color]
     );
+
     return (
       <SpacedChildren spaceDirection="bottom" childSpace=".25rem" className="flex flex-col w-full">
         <input
